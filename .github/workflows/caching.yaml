@@ -38,6 +38,8 @@ jobs:
         with:
           path: react-app/node_modules
           key: deps-node-modules-${{ hashFiles('react-app/package-lock.json') }} 
+          restore-keys: |
+            deps-node-modules-
 
       - name: Install dependencies
         working-directory: react-app
