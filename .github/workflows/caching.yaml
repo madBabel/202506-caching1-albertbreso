@@ -41,6 +41,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: react-app
+        if: ${{ steps.cache.outputs.cache-hit != 'true' || github.event.inputs.use-cache == 'false' }}
         run: |
             npm ci
 
